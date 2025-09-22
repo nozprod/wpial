@@ -17,7 +17,7 @@ function ajaxHelper(url, elementId) {
     xhr.onload = function () {
         document.getElementById(elementId).innerHTML = this.responseText;
         $(document).ready( function () {
-            $('table').DataTable({paging: false, info: true, destroy: true, searching: true});
+            $('table').DataTable({paging: false, info: true, destroy: true, search: {regex: true}});
         } );
     };
     xhr.open('GET', url);
